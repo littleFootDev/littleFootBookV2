@@ -8,7 +8,7 @@ const bookSchema = new mongoose.Schema({
     }, 
     image : {
         type: String,
-        required: [true,"Un livre doit avoir une image de premiére de couverture"]
+        //required: [true,"Un livre doit avoir une image de premiére de couverture"]
     },
     relaseDate : {
         type : Date,
@@ -23,7 +23,6 @@ const bookSchema = new mongoose.Schema({
     author : {
         name : {type: String, required: [true, "Un autheur doit avoir un nom"]},
         lastName : {type: String, required : [true, "un autheur doit avoir un prenom"]},
-        required : [true,"Un livre doit avoir un autheur"]
     },
     type : {
         type: String,

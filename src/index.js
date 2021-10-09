@@ -2,6 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
+import bookRoute from './routes/bookRoute';
+
 
 dotenv.config();
 const port = process.env.PORT;
@@ -17,6 +19,10 @@ mongoose.connect(DB, {
     useUnifiedTopology: true,
 }).then(() => console.log("DB connection successfully"));
 
+app.use(express.urlencoded({extended : true}));
+app.use(express.json());
+
+app.use('/books', bookRoute);
 app.listen(port, () => {
     console.log(`Application is running on port ${port}`);
 });
