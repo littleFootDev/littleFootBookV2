@@ -22,10 +22,10 @@ const userSchema = new mongoose.Schema({
         type : Date,
         required : [true, "Un utilisateur doit avoir une date de naisance"]
     },
-    adresse : {
+    adress : {
         numberOfStreet : { type: Number, required : [true, "Une adresse doit avoir un numéro de voie"]},
         nameOfStreet : {type: String, required: [true, "Une adresse doit avoir un nom"]},
-        zipCode : {type : String, required : [true, "une adresse doit avoir un code postale"]}
+        zipCode : {type : Number, required : [true, "une adresse doit avoir un code postale"]}
     },
     password : {
         type : String,

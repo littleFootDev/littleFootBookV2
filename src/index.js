@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
 import bookRoute from './routes/bookRoute';
+import userRoute from './routes/userRoute';
 
 
 dotenv.config();
@@ -23,6 +24,8 @@ app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 
 app.use('/books', bookRoute);
+app.use('/users', userRoute);
+
 app.listen(port, () => {
     console.log(`Application is running on port ${port}`);
 });
