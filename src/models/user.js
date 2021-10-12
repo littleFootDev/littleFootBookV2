@@ -23,9 +23,9 @@ const userSchema = new mongoose.Schema({
         required : [true, "Un utilisateur doit avoir une date de naisance"]
     },
     adress : {
-        numberOfStreet : { type: Number, required : [true, "Une adresse doit avoir un numéro de voie"]},
-        nameOfStreet : {type: String, required: [true, "Une adresse doit avoir un nom"]},
-        zipCode : {type : Number, required : [true, "une adresse doit avoir un code postale"]}
+        numberOfStreet : { type: Number,},
+        nameOfStreet : {type: String, },
+        zipCode : {type : Number,}
     },
     password : {
         type : String,

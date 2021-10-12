@@ -83,4 +83,9 @@ const deleteUser = async (req, res, next) => {
     }
 };
 
-export {getAllUser, getOneUser, createUser, updateUser, deleteUser};
+const getMe = (req, res, next) => {
+    req.params.id = req.user.id;
+    next();
+};
+
+export {getAllUser, getOneUser, createUser, updateUser, deleteUser, getMe};

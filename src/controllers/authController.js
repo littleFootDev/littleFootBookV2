@@ -4,6 +4,22 @@ import jwt from 'jsonwebtoken';
 import User from '../models/user';
 import AppError from '../utils/appError';
 
+const getUserParams = (body) => {
+    return {
+        name : body.name,
+        lastName : body.lastName,
+        email : body.email,
+        birthday : body.birthday,
+        adress : {
+           nameOfStreet: body.nameOfStreet,
+           numberOfStreet: body.numberOfStreet,
+           zipCode: body.zipCode,
+        },
+        password : body.password,
+        role : body.role,
+        active : body.active,
+    };
+};
 const signToken = (id) => {
     return jwt.sign({id}, process.env.JWT_SECRET, {
         expiresIn : process.env.JWT_EXPIRES_IN,
@@ -33,13 +49,14 @@ const createSendToken = (user, statusCode, res) => {
 
 const signUp = async (req, res, next) => {
    try {
-    const newUser = await User.create(req.body);
+       
+        const newUser = await User.create(req.body);
 
-    const url = `${req.protocol}://${req.get("host")}/me`;
+        //const url = `${req.protocol}://${req.get("host")}/me`;
 
-    createSendToken(newUser, 201, res);
+        createSendToken(newUser, 201, res);
    } catch (err) {
-    console.log(`Erreur dans la création du compte :  ${err.message}`);
+    return next(new AppError(`Erreur dans la création du compte :  ${err.message}`, 400));
    }
 };
 
