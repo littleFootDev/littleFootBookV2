@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
         minLength :6,
         select: false
     },
-    role : {
+    roles : {
         type: String,
         enum: ["User", "Employé", "Admin"],
         default: "User"
@@ -46,6 +46,8 @@ const userSchema = new mongoose.Schema({
 });
 userSchema.pre("save", async function(next) {
     try {
+        if(!this.isModified('password')) return next();
+        
         this.password = await bcrypt.hash(this.password, 12);
     } catch (err) {
         console.log(`Une erreur c'est produite lors de la création du compte ${message.err}`);

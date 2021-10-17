@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import { getAllUser, getOneUser, createUser, updateUser, deleteUser, getMe } from '../controllers/userControllers';
-import { signUp, login, logOut, protect, restricTo} from '../controllers/authController';
+import { signUp, logIn, protect, restrictTo} from '../controllers/authController';
 
 
 
@@ -8,16 +8,13 @@ import { signUp, login, logOut, protect, restricTo} from '../controllers/authCon
 
 const userRoute = Router();
 
-userRoute.post("/signup", signUp);
-userRoute.post("/login", login);
-userRoute.get("/logout", logOut);
-userRoute.get("/me", getOneUser, getMe );
+userRoute.post('/signup', signUp);
+userRoute.post('/login', logIn);
 
-userRoute.use(restricTo('Admin', 'Employé'));
-userRoute.get("/", getAllUser);
-userRoute.get("/:id", getOneUser);
-userRoute.post("/create", createUser);
-userRoute.post("/update/:id", updateUser);
-userRoute.delete("/delete/:id", deleteUser);
+userRoute.get("/",protect, restrictTo("Admin", "Employé"), getAllUser);
+userRoute.get("/:id",protect, restrictTo("Admin", "Employé"), getOneUser);
+userRoute.post("/create",protect, restrictTo("Admin", "Employé"), createUser);
+userRoute.post("/update/:id",protect, restrictTo("Admin", "Employé"), updateUser);
+userRoute.delete("/delete/:id",protect, restrictTo("Admin", "Employé"), deleteUser);
 
 export default userRoute;
