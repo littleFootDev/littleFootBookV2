@@ -1,11 +1,21 @@
 import Book from "../models/book";
+import APIFeatures from "../utils/apiFeatures";
 
 const getAllBooks = async (req, res, next) => {
     try {
-        const books = await Book.find({});
+        let filter = {};
+
+        const feature = new APIFeatures(Book.find(filter), req.query)
+            .filter()
+            .sort()
+            .limitFields()
+            .paginate();
+
+        const books = await feature.query;
 
         res.status(200).json({ 
             status : "success",
+            results: books.length,
             data: {
                 data: books
             }
