@@ -8,6 +8,7 @@ import mongoSanitize from 'express-mongo-sanitize';
 import xss from 'xss-clean';
 import hpp from 'hpp';
 
+import globalErrorHandler from './controllers/errorController'
 import bookRoute from './routes/bookRoute';
 import userRoute from './routes/userRoute';
 
@@ -60,6 +61,8 @@ app.use(express.static(path.join(__dirname, 'puplic')));
 app.use('/books', bookRoute);
 app.use('/users', userRoute);
 
+
+app.use(globalErrorHandler);
 app.listen(port, () => {
     console.log(`Application is running on port ${port}`);
 });
