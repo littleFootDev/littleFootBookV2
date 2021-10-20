@@ -18,10 +18,6 @@ const borrowSchema = new mongoose.Schema({
         default : Date.now()
     },
     dateOfreturn : Date,
-    borrow: {
-        type : Boolean,
-        default : false
-    }
 });
 
 const Borrow = mongoose.model('Borrow', borrowSchema);

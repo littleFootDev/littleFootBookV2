@@ -11,6 +11,7 @@ import hpp from 'hpp';
 import globalErrorHandler from './controllers/errorController'
 import bookRoute from './routes/bookRoute';
 import userRoute from './routes/userRoute';
+import borrowRoute from './routes/borrowRoute';
 
 
 dotenv.config();
@@ -60,6 +61,7 @@ app.use(express.static(path.join(__dirname, 'puplic')));
 
 app.use('/books', bookRoute);
 app.use('/users', userRoute);
+app.use('/borrow', borrowRoute);
 
 
 app.use(globalErrorHandler);
