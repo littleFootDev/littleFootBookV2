@@ -1,6 +1,7 @@
 import User from '../models/user';
-import {getAll, getOne, deleteOne, updateOne, createOne} from './handlerFactory';
+import {getAll, getOne, deleteOne, updateOne} from './handlerFactory';
 import AppError from '../utils/appError';
+import catchAsync from '../utils/catchAsync';
 
 const filterObj = (obj, ...allowedFields) => {
     const newObj = {};
@@ -17,8 +18,7 @@ const createUser = (req, res) => {
         message: "Cette route n'est pas defini! utilisé /signup"
     });
 };
-const updateMe = async (req, res, next) => {
-    try {
+const updateMe = catchAsync( async (req, res, next) => {
         if (req.body.password || req.body.passwordConfirm) {
             return next(new AppError("c'est route n'est pas faite pour modifier le mot de passe. Utilisé /updateMyPassword", 400));
         };
@@ -34,10 +34,7 @@ const updateMe = async (req, res, next) => {
                 user : updateUser,
             }
         });
-    } catch (err) {
-        next(err);
-    }
-}
+    });
 
 const deleteMe = async (req, res,next) => {
     try {
@@ -55,6 +52,8 @@ const getMe = (req, res, next) => {
     req.params.id = req.user.id;
     next();
 };
+
+
 const getAllUser = getAll(User);
 const getOneUser = getOne(User);
 const updateUser = updateOne(User);

@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema({
         nameOfStreet : {type: String, },
         zipCode : {type : Number,}
     },
+    books : {
+        type : mongoose.Schema.ObjectId,
+        ref : 'borrow', 
+    },
     password : {
         type : String,
         required : [true, "Un utilisateur doit avoir un mot de passe"],
