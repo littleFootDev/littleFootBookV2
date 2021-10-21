@@ -215,4 +215,4 @@ const updatePassword = catchAsync( async (req, res, next) => {
 
     createSendToken(user, 200, res);
 });
-export {signUp, logIn, protect, restrictTo, forgotPassword, resetPassword, updatePassword, logOut, isLoggedIn};
+export {signUp, protect, restrictTo, forgotPassword, resetPassword, updatePassword, logOut, isLoggedIn, logIn};

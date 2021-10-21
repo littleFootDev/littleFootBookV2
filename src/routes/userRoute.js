@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import { getAllUser, getOneUser, createUser, updateUser, deleteUser, getMe, updateMe, deleteMe } from '../controllers/userControllers';
-import { signUp, logIn, protect, restrictTo, forgotPassword, resetPassword, updatePassword, logOut} from '../controllers/authController';
+import { signUp, protect, restrictTo, forgotPassword, resetPassword, updatePassword, logOut, logIn } from '../controllers/authController';
 
 
 

@@ -6,7 +6,7 @@ export const signup = async (name, lastName, birthday,email, numberOfStreet, nam
     try {
         const res = await axios({
             method : 'POST',
-            url : '/users/login',
+            url : '/users/signup',
             data : { 
                 name,
                 lastName,
