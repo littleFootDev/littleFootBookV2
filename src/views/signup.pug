@@ -1,0 +1,17 @@
+extends layout
+
+block content 
+
+    .content-form 
+        h2.title-form Inscription
+        form.form-signup(action='/user/signup' method='post')
+            input.form-control-signin(type="text", name="name", id="inputName", placeholder="Nom" autofocus)
+            input.form-control-signin(type="text", name="lastName", id="inputLastname", placeholder="Prenom" )
+            input.form-control-signin(type="email", name="email", id="inputEmail", placeholder="Adresse mail" )
+            input.form-control-signin(type="date", name="birthday", id="inputBirthday", placeholder="Date de naissance" )
+            input.form-control-signin(type="text", name="numberOfStreet", id="inputNumberOfStreet", placeholder="N° de vois" )
+            input.form-control-signin(type="text", name="nameOfStreet", id="inputNameOfStreet", placeholder="Nom de la vois" )
+            input.form-control-signin(type="text", name="zipCode", id="inputZipcode", placeholder="Code postal" )
+            input.form-control-signin(type="password", name="password", id="inputPassword", placeholder="Mot de passe" )
+            br
+            button.btn.btn-green(type="submit") Enregistrer

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+    .main 
+        h2.title-catalogue Notre catalogue
+        .card-content
+
+            each book in books
+                
+                .card 
+                    img.card-img-top(src="/images/bilbo-le-hobbit.jpeg" alt=`${book.title}`)
+                    .card-body 
+                        h5.card-title= book.title
+                        p.card-text= book.description
+                    .card-body
+                        if(book.available === true)
+                            .button.btn.btn-green
+                                a(href=`/book/${book._id}`) Voir

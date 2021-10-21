@@ -1,0 +1,15 @@
+header.header
+    nav
+        h1 
+            a.nav-link.title(href='/') LittleFootBook
+    .btn-rond-menu 
+        .cont-ligne 
+            .ligne-unique   
+    .nav.nav-user
+        if user
+            a.nav-link.nav-item-link Déconnection
+            a.nav-link.nav-item-link(href='/me')
+                span= user.fullName
+        else
+            a.nav-link.nav-item-link(href='/login') Connection
+            a.nav-link.nav-item-link(href='/signup') Inscription

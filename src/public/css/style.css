@@ -1,0 +1,244 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    line-height: 1.6;
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
+    color: #153b50;
+}
+.header {
+    position : absolute;
+    background-color: #ecebe4;
+    padding: 0 5rem;
+    height: 8rem;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 57.6rem;
+}
+.nav-link {
+    text-decoration: none;
+    color: #153b50;
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+.title {
+    font-size: 4rem;
+    font-family: 'Lora', serif;;
+}
+.nav-link {
+    font-size: 1.5rem;
+}
+nav {
+    position: relative;
+}
+.nav {
+
+    display: none;
+}
+.menu-visible {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+}
+
+.btn-rond-menu {
+    width: 5rem;
+    height : 5rem;
+    border: 1px solid #ecebe4;
+    border-radius: 50%;
+    background: #153b50;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+
+}
+.cont-ligne {
+    width: 36px;
+    height:36px;
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ligne-unique {
+    width:100%;
+    height: 4px;
+    border-radius: 5px;
+    background :#ecebe4;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.ligne-unique::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    background: #ecebe4;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px
+}
+.ligne-unique::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    background : #ecebe4;
+    width:100%;
+    height : 4px;
+    border-radius: 5px;
+}
+
+.cont-ligne.active .ligne-unique::after {
+    top:0;
+    transform : rotate(45deg);
+    transition: top 300ms, ease, transform 300ms 300ms ease;
+}
+
+.cont-ligne.active .ligne-unique{
+    background: transparent;
+}
+.cont-ligne.active .ligne-unique::before {
+    bottom:0;
+    transform : rotate(-45deg);
+    transition: top 300ms, ease, transform 300ms 300ms ease;
+}
+
+
+@media screen and (min-width: 1300px) {
+    
+   .btn-rond-menu {
+       display: none;
+   }
+
+   .nav {
+       display :flex;
+   }
+};
+
+.content-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2{
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 5rem;
+    font-family: 'Lora', serif;
+}
+
+footer {
+    min-width: 100%;
+    margin-top: 3rem;
+    height: 9rem;
+    background: #ecebe4;
+    color: #153b50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: flex-end;
+}
+.adress-content {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.copyright {
+    margin-left: 2rem;
+}
+.content-form {
+    margin: auto;
+    margin-top: 5rem;
+    width: 50%;
+    border: 2px solid #153b50;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 75vh;
+    background: #ecebe4;
+}
+.title-form {
+    font-family: 'Lora', serif;
+}
+.form-signin {
+    display : flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.form-control-signin {
+    margin-bottom: 2rem;
+    border: none;
+    border-bottom: .1rem solid #153b50;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    color: #153b50;
+    background: #ecebe4;
+}
+
+.btn{
+    border: .2rem solid #153b50;
+    border-radius: .5rem;
+    width:10rem;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+}
+.btn-green {
+    background: #429EA6;
+    color: #16f4D0;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 576px) {
+    .form-control-signin {
+        width:200%;
+    }
+}
+.main {
+    display: flex;
+    flex-direction: column;
+}
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card {
+    width:18rem;
+    margin-top: 3rem;
+}
+.card-body {
+    text-align: center;
+}
+.card-book {
+    width: 30rem;
+}
