@@ -1,4 +1,5 @@
 import Book from '../models/book';
+import User from '../models/user';
 import catchAsync from '../utils/catchAsync';
 import AppError from '../utils/appError';
 
@@ -44,4 +45,27 @@ const postSignupForm = (req, res, next) => {
     res.redirect('/');
 };
 
-export {home, getSignupForm, postSignupForm, getCatalogue, getBook, getLoginForm};
+const getAccount = (req, res, next) => {
+    res.render("account", {
+        title: 'Votre compte'
+    });
+};
+
+const updateUserData =  catchAsync(async(req, res, next) => {
+    const updateUser = await User.findByIdAndUpdate(req.user.id, {
+        email: req.body.email,
+        numberOfStreet : req.body.address.numberOfStreet,
+        nameOfStreet : req.body.address.nameOfStreet,
+        zipCode : req.body.address.zipCode
+    }, {
+        new : true,
+        runValidators : true,
+    });
+    res.render("account", {
+        title: 'Votre compte',
+        user : updateUser
+    });
+
+});
+
+export {home, getSignupForm, postSignupForm, getCatalogue, getBook, getLoginForm, getAccount, updateUserData};
