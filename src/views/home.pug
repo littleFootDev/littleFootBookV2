@@ -1,0 +1,30 @@
+extends layout
+
+block content 
+    .content-home
+        h2.home-title  Votre bibliotheque
+
+        #myCarousel.carousel.slide(data-bs-ride="carousel")
+            .carousel-inner.d-flex.justify-content-around
+                .carousel-item.active 
+                    img.d-block.w-50(src="/images/biblioteque.jpg")
+                    .carousel-caption.d-none.d-md-block
+                        h3 Attention 
+                        p Suite au messure gourvernementale nous ne pouvons plus vous accueillir. Mais nous reston ouvert pour des retrait. 
+                .carousel-item 
+                    img.d-block.w-100(src="/images/livre.jpg")
+                    .carousel-caption.d-none.d-md-block
+                        h3 Aimez lire
+                        p Pendant cette periode de confiment prenais le temps d'aprecier un bon livre. 
+                .carousel-item 
+                    img.d-block.w-100(src="/images/nouveaute.jpg")
+                    .carousel-caption.d-none.d-md-block
+                        h3 Nouveauté
+                        p Même pendant cette periode particulaire nous rentront de nouveau livre pour votre plaisir
+                button.carousel-control-prev(type="button", data-bs-target="#myCarousel", data-bs-slide="prev" )
+                    span.carousel-control-prev-icon(aria-hiden="true")
+                    span.visually-hiden Précédent 
+                button.carousel-control-next(type="button", data-bs-target="#myCarousel", data-bs-slide="next")
+                    span.carousel-control-next-icon(aria-hiden="true")
+                    span.visually-hiden Suivant
+

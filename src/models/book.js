@@ -34,6 +34,10 @@ const bookSchema = new mongoose.Schema({
     }
 });
 
+bookSchema.virtual("fullName", function () {
+    return `${this.author.name} ${this.author.lastName}`;
+});
+
 const Book = mongoose.model('Book', bookSchema);
 
 export default Book;

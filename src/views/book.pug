@@ -1,0 +1,22 @@
+extends layout 
+
+block content 
+
+    .main 
+        h2.title-livre= book.title 
+        .card-content 
+            .card.card-book 
+                img.card-img-top(src="/images/bilbo-le-hobbit.jpeg" alt=`${book.title}`)
+                .card-body 
+                    h4.card-title= book.title
+                    p.card-text= book.description
+                    h5.card-title= ` Auteur : ${book.author.name} ${book.author.lastName}`
+                    h6.card-title= ` genre : ${book.type}`
+
+                    -const date = book.relaseDate.toLocaleString('fr-fr', {month: 'long', year: 'numeric'});
+
+                    h6.card-title= ` date de paruption : ${date}`
+                .card-body
+                    if(book.available === true)
+                        .button.btn.btn-green
+                            a(href="/catalogue") Emprunter

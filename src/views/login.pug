@@ -1,0 +1,11 @@
+extends layout
+
+block content 
+
+    .content-form 
+        h2.title-form Connection
+        form.form-signin
+            input.form-control-signin#email(type="email", placeholder="Adresse mail", required, autofocus)
+            input.form-control-signin#password(type="password", placeholder="Mot de passe", required )
+            br
+            button.btn.btn-green(type="submit") Connection
