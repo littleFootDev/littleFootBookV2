@@ -109,7 +109,7 @@ const protect = catchAsync (async (req, res, next) => {
         next();
 });
 
-const isLoggedIn = catchAsync(async (req, res, next) => {
+const isLoggedIn = async (req, res, next) => {
     if (req.cookies.jwt) {
         try {
           const decoded = await promisify(jwt.verify)(
@@ -133,7 +133,7 @@ const isLoggedIn = catchAsync(async (req, res, next) => {
         }
       }
       next();
-});
+};
 
 
 const restrictTo = (...roles) => {

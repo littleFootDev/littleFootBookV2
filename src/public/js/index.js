@@ -1,4 +1,4 @@
-import {login} from './login';
+import {login, logout} from './login';
 
 console.log('bonjour');
 
@@ -12,6 +12,7 @@ btnMenu.addEventListener("click", () => {
 })
 
 const loginForm = document.querySelector('.form-signin');
+const logOutBtn = document.querySelector('.nav-logout');
 
 
 if(loginForm)
@@ -23,3 +24,6 @@ if(loginForm)
 
         login(email, password);
     });
+
+
+if(logOutBtn) logOutBtn.addEventListener('click', logout);

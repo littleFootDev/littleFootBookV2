@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import { getAllUser, getOneUser, createUser, updateUser, deleteUser, getMe, updateMe, deleteMe } from '../controllers/userControllers';
-import { signUp, logIn, protect, restrictTo, forgotPassword, resetPassword, updatePassword} from '../controllers/authController';
+import { signUp, logIn, protect, restrictTo, forgotPassword, resetPassword, updatePassword, logOut} from '../controllers/authController';
 
 
 
@@ -10,6 +10,7 @@ const userRoute = Router();
 
 userRoute.post('/signup', signUp);
 userRoute.post('/login', logIn);
+userRoute.get('/', logOut);
 
 userRoute.post('/forgotPassword', forgotPassword);
 userRoute.patch('/resetPassword/:token', resetPassword);

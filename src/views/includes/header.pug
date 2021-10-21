@@ -7,7 +7,7 @@ header.header
             .ligne-unique   
     .nav.nav-user
         if user
-            a.nav-link.nav-item-link Déconnection
+            a.nav-link.nav-item-link.nav-logout(href="/") Déconnection
             a.nav-link.nav-item-link(href='/me')
                 span= user.fullName
         else
