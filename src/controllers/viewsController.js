@@ -19,6 +19,9 @@ const getCatalogue = catchAsync (async(req, res, ) => {
 const getBook = catchAsync (async(req, res, ) => {
     const book = await Book.findById(req.params.id);
 
+    if(!book) {
+        return next(new AppError("Aucunb livre avec ce nom.", 404))
+    }
     res.render("book", {
         title : book.title,
         book
