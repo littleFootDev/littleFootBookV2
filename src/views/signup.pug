@@ -4,15 +4,15 @@ block content
 
     .content-form 
         h2.title-form Inscription
-        form.form-signin(action='/user/signup' method='post')
-            input.form-control-signin(type="text", name="name", id="inputName", placeholder="Nom" autofocus)
-            input.form-control-signin(type="text", name="lastName", id="inputLastname", placeholder="Prenom" )
-            input.form-control-signin(type="email", name="email", id="inputEmail", placeholder="Adresse mail" )
-            input.form-control-signin(type="date", name="birthday", id="inputBirthday", placeholder="Date de naissance" )
-            input.form-control-signin(type="text", name="numberOfStreet", id="inputNumberOfStreet", placeholder="N° de vois" )
-            input.form-control-signin(type="text", name="nameOfStreet", id="inputNameOfStreet", placeholder="Nom de la vois" )
-            input.form-control-signin(type="text", name="zipCode", id="inputZipcode", placeholder="Code postal" )
-            input.form-control-signin(type="password", name="password", id="inputPassword", placeholder="Mot de passe" )
-            input.form-control-signin(type="password", name="passwordConfirm", id="inputPasswordConfim", placeholder="Mot de passe" )
+        form.form-signin.form-signup
+            input.form-control-signin(type="text", name="name", id="name", placeholder="Nom" autofocus)
+            input.form-control-signin(type="text", name="lastName", id="lastname", placeholder="Prenom" )
+            input.form-control-signin(type="email", name="email", id="email", placeholder="Adresse mail" )
+            input.form-control-signin(type="date", name="birthday", id="birthday", placeholder="Date de naissance" )
+            input.form-control-signin(type="text", name="numberOfStreet", id="numberOfStreet", placeholder="N° de vois" )
+            input.form-control-signin(type="text", name="nameOfStreet", id="nameOfStreet", placeholder="Nom de la vois" )
+            input.form-control-signin(type="text", name="zipCode", id="zipcode", placeholder="Code postal" )
+            input.form-control-signin(type="password", name="password", id="password", placeholder="Mot de passe" )
+            input.form-control-signin(type="password", name="passwordConfirm", id="passwordConfim", placeholder="Mot de passe" )
             br
-            button.btn.btn-green(type="submit") Enregistrer
+            button.btn.btn-green.btn-inscription(type="submit") Enregistrer

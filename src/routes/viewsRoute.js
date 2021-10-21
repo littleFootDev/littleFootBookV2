@@ -9,8 +9,8 @@ viewsRoute.get('/', home);
 viewsRoute.get('/catalogue',isLoggedIn, getCatalogue);
 viewsRoute.get('/book/:id', getBook);
 
-viewsRoute.get('user/signup', getSignupForm);
-viewsRoute.post('/user/signup', postSignupForm);
+viewsRoute.get('/signup', getSignupForm);
+viewsRoute.post('/signup', postSignupForm);
 viewsRoute.get('/login', isLoggedIn, getLoginForm,);
 viewsRoute.get('/me',protect ,getAccount);
 

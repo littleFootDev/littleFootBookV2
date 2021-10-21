@@ -298,4 +298,8 @@ footer {
     .title-secondary {
         font-size: 5rem;
     }
+};
+
+form {
+    margin-bottom: 3rem;
 }
