@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "backpack",
     "watch:js": "parcel watch ./src/public/js/index.js --out-dir ./src/public/js --out-file bundle.js --public-url /js",
-  "build:js": "parcel watch ./src//public/js/index.js --out-dir ./src/public/js --out-file bundle.js --public-url /js"
+    "build:js": "parcel watch ./src//public/js/index.js --out-dir ./src/public/js --out-file bundle.js --public-url /js"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +28,7 @@
     "hpp": "^0.2.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.9",
+    "multer": "^1.4.3",
     "nodemailer": "^6.7.0",
     "pug": "^3.0.2",
     "validator": "^13.6.0",
