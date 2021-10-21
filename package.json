@@ -5,8 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "backpack",
+    "start": "node src/index.js",
     "watch:js": "parcel watch ./src/public/js/index.js --out-dir ./src/public/js --out-file bundle.js --public-url /js",
-    "build:js": "parcel watch ./src//public/js/index.js --out-dir ./src/public/js --out-file bundle.js --public-url /js"
+    "build:js": "parcel build ./src//public/js/index.js --out-dir ./src/public/js --out-file bundle.js --public-url /js"
   },
   "keywords": [],
   "author": "",
@@ -38,5 +39,8 @@
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "parcel-bundler": "^1.12.5"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
