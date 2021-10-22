@@ -9,6 +9,7 @@ import xss from 'xss-clean';
 import hpp from 'hpp';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import compression from 'compression';
 
 import globalErrorHandler from './controllers/errorController'
 import bookRoute from './routes/bookRoute';
@@ -101,6 +102,8 @@ app.use((req, res, next) => {
   );
   next();
 }); 
+
+app.use(compression());
 
 app.use('/', viewsRoute);
 app.use('/books', bookRoute);

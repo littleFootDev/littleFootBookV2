@@ -1,4 +1,4 @@
-import Borrow from "../models/Borrow";
+import Borrow from "../models/borrow";
 import catchAsync from "../utils/catchAsync";
 import {getAll, getOne, deleteOne, updateOne} from './handlerFactory';
 

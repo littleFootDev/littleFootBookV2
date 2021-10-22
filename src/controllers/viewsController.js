@@ -68,4 +68,4 @@ const updateUserData =  catchAsync(async(req, res, next) => {
 
 });
 
-export {home, getSignupForm, postSignupForm, getCatalogue, getBook, getLoginForm, getAccount, updateUserData};
+export {home, getSignupForm, postSignupForm, getCatalogue, getBook, getAccount, updateUserData, getLoginForm};

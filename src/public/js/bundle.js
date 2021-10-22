@@ -9483,7 +9483,7 @@ var signup = /*#__PURE__*/function () {
             _context.next = 3;
             return (0, _axios.default)({
               method: 'POST',
-              url: '/users/login',
+              url: '/users/signup',
               data: {
                 name: name,
                 lastName: lastName,
@@ -9799,7 +9799,7 @@ var _login = require("./login");
 
 var _updateSettings = require("./updateSettings");
 
-var _signup = _interopRequireDefault(require("./signup"));
+var _signup = require("./signup");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9822,7 +9822,7 @@ var userPasswordForm = document.querySelector('.form-update-password');
 var singupForm = document.querySelector('.form-signup');
 if (singupForm) singupForm.addEventListener('submit', /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(e) {
-    var name, lastName, birthday, email, numberOfStreet, nameOfStreet, zipCode, Password, passwordConfirm;
+    var name, lastName, birthday, email, numberOfStreet, nameOfStreet, zipCode, password, passwordConfirm;
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -9835,10 +9835,10 @@ if (singupForm) singupForm.addEventListener('submit', /*#__PURE__*/function () {
             numberOfStreet = document.querySelector('#numberOfStreet').value;
             nameOfStreet = document.querySelector('#nameOfStreet').value;
             zipCode = document.querySelector('#zipcode').value;
-            Password = document.querySelector('#Password').value;
+            password = document.querySelector('#password').value;
             passwordConfirm = document.querySelector('#passwordConfirm').value;
             _context.next = 12;
-            return (0, _signup.default)(name, lastName, birthday, email, numberOfStreet, nameOfStreet, zipCode, password, passwordConfirm);
+            return (0, _signup.signup)(name, lastName, birthday, email, numberOfStreet, nameOfStreet, zipCode, password, passwordConfirm);
 
           case 12:
           case "end":
@@ -9956,7 +9956,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63692" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54344" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
