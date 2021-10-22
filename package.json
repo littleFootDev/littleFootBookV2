@@ -4,9 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "start" : "node src/index.js"
     "dev": "backpack",
-    "watch:js": "parcel watch ./src/public/js/index.js --out-dir ./src/public/js --out-file bundle.js --public-url /js",
-    "build:js": "parcel watch ./src//public/js/index.js --out-dir ./src/public/js --out-file bundle.js --public-url /js"
+    
   },
   "keywords": [],
   "author": "",
