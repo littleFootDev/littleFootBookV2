@@ -13,15 +13,15 @@ block content
                         a.user-link-menu Livre 
 
             - if(user.role === "Admin" || user.role === "Employer")
-            .admin-nav-menu 
-                h5.admin-title-menu Admin 
-                ul.liste-admin-menu
-                    li.admin-item-menu
-                        a.admin-link-menu(href="#") Gestion des livre 
-                    li.admin-item-menu
-                        a.admin-link-menu(href="#") Gestion des emprunt 
-                    li.admin-item-menu
-                        a.admin-link-menu(href="#") Gestion des utilisateur  
+                .admin-nav-menu 
+                    h5.admin-title-menu Admin 
+                    ul.liste-admin-menu
+                        li.admin-item-menu
+                            a.admin-link-menu(href="#") Gestion des livre 
+                        li.admin-item-menu
+                            a.admin-link-menu(href="#") Gestion des emprunt 
+                        li.admin-item-menu
+                            a.admin-link-menu(href="#") Gestion des utilisateur  
 
         .view-gestion
             .user-view-content
@@ -29,9 +29,9 @@ block content
                     h2.title-secondary Gestion de votre compte 
                     form.form-signin.form-user-update
                         input.form-control-signin(type="email", name="email", id="email", value=`${user.email}` )
-                        input.form-control-signin(type="text", name="numberOfStreet", id="numberOfStreet", value=`${user.adrress.numberOfStreet}` )
-                        input.form-control-signin(type="text", name="nameOfStreet", id="nameOfStreet", value=`${user.adress.nameOfStreet}` )
-                        input.form-control-signin(type="text", name="zipCode", id="zipcode", value=`${user.adress.zipCode}` )
+                        input.form-control-signin(type="text", name="numberOfStreet", id="numberOfStreet", value=`numero de voie` )
+                        input.form-control-signin(type="text", name="nameOfStreet", id="nameOfStreet", value=`nom de la voie` )
+                        input.form-control-signin(type="text", name="zipCode", id="zipcode", value=`Zipcode` )
                         br
                         button.btn.btn-green(type="submit") Enregistrer
                 
@@ -46,4 +46,3 @@ block content
                         input.form-control-signin(type="password", name="passwordConfirm", id="passwordConfirm", placeholder="Confirmation mot de passe" )
                         br
                         button.btn.btn-green.btn-save-password(type="submit") Enregistrer
-

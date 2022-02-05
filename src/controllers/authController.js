@@ -13,27 +13,30 @@ const signToken = id => {
     });
 }; 
 
-const createSendToken = ( user, statusCode, res) => {
+
+const createSendToken = (user, statusCode, res) => {
     const token = signToken(user._id);
-    const cookieOptions = { 
-        expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000),
-        httpOnly : true
+    const cookieOptions = {
+      expires: new Date(
+        Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+      ),
+      httpOnly: true,
     };
-
-    if(process.env.NODE_ENV === 'production') cookieOptions.secure = true;
-
-    res.cookie('jwt', token, cookieOptions);
-
+    if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
+  
+    res.cookie("jwt", token, cookieOptions);
+  
+    // Remove password from output
     user.password = undefined;
-
-    res.json({ 
-        status : 'success',
-        token,
-        data : {
-            user
-        }
+  
+    res.status(statusCode).json({
+      status: "success",
+      token,
+      data: {
+        user,
+      },
     });
-};
+  };
 
 
 const signUp = catchAsync(async (req, res, next) => {
@@ -62,12 +65,11 @@ const logIn = catchAsync( async (req, res, next) => {
 });
 
 const logOut = (req, res) => {
-    res.cookie('jwt', 'loggedout', {
-        expires : new Date(Date.now() + 10 * 1000),
-        httpOnly: true
-    });
-
-    res.json({status: 'success'});
+    res.cookie("jwt", "loggedout", {
+        expires: new Date(Date.now() + 10 * 1000),
+        httpOnly: true,
+      });
+      res.status(200).json({ status: "success" });
 }
 
 const protect = catchAsync (async (req, res, next) => {
@@ -116,7 +118,7 @@ const isLoggedIn = async (req, res, next) => {
             req.cookies.jwt,
             process.env.JWT_SECRET
           );
-
+    
           const currentUser = await User.findById(decoded.id);
           if (!currentUser) {
             return next();
@@ -125,7 +127,6 @@ const isLoggedIn = async (req, res, next) => {
           if (currentUser.changedPasswordAfter(decoded.iat)) {
             return next();
           }
-    
           res.locals.user = currentUser;
           return next();
         } catch (err) {

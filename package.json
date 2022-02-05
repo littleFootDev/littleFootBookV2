@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start" : "backpack node src/index.js",
-    "dev": "backpack"
+    "dev": "backpack",
+    "watch:js": "parcel watch ./src/public/js/index.js --out-dir ./src/public/js --out-file bundle.js",
+    "build:js": "parcel watch ./src/public/js/index.js --out-dir ./src/public/js --out-file bundle.js"
   },
   "keywords": [],
   "author": "",

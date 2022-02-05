@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     font-size: 62.5%;
 }
@@ -10,12 +11,13 @@ body {
     line-height: 1.6;
     font-weight: 300;
     font-family: 'Raleway', sans-serif;
-    min-height: 100vh;
-    color: #153b50;
+    color: #dbdbdb;
+    height: 100;
 }
+
 .header {
     position : absolute;
-    background-color: #ecebe4;
+    background-color: #6667ab;
     padding: 0 5rem;
     height: 8rem;
     position: relative;
@@ -23,20 +25,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 57.6rem;
+    min-width: 60rem;
 }
+
 .nav-link {
     text-decoration: none;
-    color: #153b50;
+    color: #dbdbdb;
     margin-right: 1rem;
     font-size: 2rem;
 }
 .title {
     font-size: 4rem;
     font-family: 'Lora', serif;;
-}
-.nav-link {
-    font-size: 1.5rem;
 }
 nav {
     position: relative;
@@ -58,7 +58,7 @@ nav {
     border: 1px solid #ecebe4;
     border-radius: 50%;
     background: #153b50;
-    position: fixed;
+    position: absolute;
     top: 10px;
     right: 10px;
     z-index: 10;
@@ -119,40 +119,28 @@ nav {
 }
 
 
-@media screen and (min-width: 1300px) {
-    
-   .btn-rond-menu {
-       display: none;
-   }
-
-   .nav {
-       display :flex;
-   }
-};
-
 .content-home {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-
-h2{
-    font-size: 3.5rem;
-    text-align: center;
-    margin: 5rem;
-    font-family: 'Lora', serif;
-}
-
 footer {
     min-width: 100%;
     height: 9rem;
-    background: #ecebe4;
-    color: #153b50;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex: flex-end;
+    background: #6667ab;
+    color: #dbdbdb;
+
+}
+.main {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .adress-content {
     margin-right: 2rem;
@@ -165,30 +153,184 @@ footer {
 .copyright {
     margin-left: 2rem;
 }
-.content-form {
-    margin: auto;
-    margin-top: 5rem;
+
+
+.actu-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+    margin: 2rem 0 2rem 0;
+    background-color: #ecebe4;
+    border-radius: .2rem;
+}
+.actu-txt {
+    font-size: 1.3rem;
+    text-align: justify;
+    padding: 0 1rem 0 1rem;
+}
+.actu-title {
+    font-size: 1.8rem;
+    padding : 1rem 0 1rem 0;
+    font-weight: bold;
+    color: #153b50;
+}
+.actu-footer {
+    font-size: 1.5rem;
+    color: #153b50;
+    margin: 1rem 0 1rem 0;
+}
+
+.img-content {
+    width : 75%;
+    height : 50%;
+
+}
+img {
+    width: 100%;
+    height:100%;
+    margin-bottom: 2rem;
+}
+.form-content {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
     width: 50%;
-    border: 2px solid #153b50;
+    min-height: 60vh;
+    margin :15rem auto;
+}
+.form-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.form-book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background : #ecebe4;
+    width: 100%;
+    min-height: 50vh;
+    padding-bottom: 5rem;
+}
+.form-controle-book {
+    margin: 2rem 0 0 0;
+    border: none;
+    border-bottom: .1rem solid #153b50;
     display: flex;
     justify-content:center;
     align-items: center;
-    flex-direction: column;
-    min-height: 75vh;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    color: #153b50;
     background: #ecebe4;
 }
-.title-form {
-    font-family: 'Lora', serif;
+
+.btn-book {
+    border: .2rem solid #153b50;
+    border-radius: .5rem;
+    width:10rem;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    background: #429EA6;
+    color: #16f4D0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
-.form-signin {
+
+.title-catalogue {
+    margin: 5rem auto;
+    font-size:3rem;
+}
+.card-content {
+    width : 100%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    margin :2rem 0 2rem 2rem;
+    width : 40rem;
+    background: #ecebe4;
+    color: #153b50;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform .3s ease-out;
+    box-shadow: 0 0 1rem rgba(0,0,0 0.5);
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.cont-img-book {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+.cont-img-book img {
+    width: 100%;
+    height: auto;
+}
+.card h3 {
+    padding: 10px 10px 0;
+    font-size: 22px;
+}
+.card p {
+    padding: 10px 10px 0;
+}
+.btn-book {
+    display: block;
+    margin: 10px;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.btn-book::after {
+    content: "";
+    height: 240px;
+    width: 100px;
+    background: rgba(255, 255, 255, 0.4);
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: -50px;
+    transform: rotate(-45deg);
+}
+.btn-book:hover::after {
+    transition: transform 0.3s 0.1s linear;
+    transform: translateX(400px);
+}
+
+.form-signup, .form-signin {
     display : flex;
     justify-content:center;
     align-items: center;
     flex-direction: column;
     margin-bottom: 2rem;
+    background: #ecebe4;
+    width: 100%;
+    min-height: 50vh;
 }
 
-.form-control-signin {
+.form-control-signup,.form-control-signin {
     margin-bottom: 2rem;
     border: none;
     border-bottom: .1rem solid #153b50;
@@ -209,97 +351,67 @@ footer {
     cursor: pointer;
     font-family: 'Raleway', sans-serif;
 }
-.btn-green {
+.btn-inscription, .btn-login {
     background: #429EA6;
     color: #16f4D0;
     font-weight: bold;
     font-size: 1.5rem;
 }
 
-@media screen and (min-width: 576px) {
-    .form-control-signin {
-        width:200%;
-    }
+.title-form {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
-.main {
-    display: flex;
-    flex-direction: column;
-}
-.card-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.card {
-    width:18rem;
-    margin-top: 3rem;
-}
-.card-body {
-    text-align: center;
-}
-.card-book {
-    width: 30rem;
-}
-.main-account {
-    display: flex;
-    height :85vh;    
-}
+
 .user-nav-content {
-    position:absolute;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    border-right: 1px solid #153b50;
-    border-top: 1px solid #153b50;
-    width : 20rem;
-    height : 85vh;
-    background: #ecebe4;
-}
-.user-item-menu, .admin-item-menu {
-    list-style: none;
-}
-.admin-nav-menu, .user-nav-menu {
+    width: 100%;
+    background: #6667ab;
+    color: #dbdbdb;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    border-top: .5rem solid #85c7f2;
 }
-.user-link-menu, .admin-link-menu {
+.liste-user-menu {
+    color: #dbdbdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-item-menu {
+    list-style: none;
+   
+}
+.title-user {
+    font-size: 2rem;
+}
+.user-link-menu {
+    margin-right: 2rem;
+    color: #dbdbdb;
+    font-size:1.5rem;
     text-decoration: none;
     cursor: pointer;
-    font-family: 'Raleway', sans-serif;
-    color: #153b50;
-    margin-bottom: .5rem;
-}
-.title-user, .admin-title-menu{
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Lora', serif;
-}
-.view-gestion {
-    margin-left: 20rem;
-    width :90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
-.title-secondary {
-    font-family: 'Lora', serif;
-    color: #153b50;
-    font-size: 1.5rem;
-}
-
-@media screen and(min-width: 1300px) {
-    .title-secondary {
-        font-size: 5rem;
+@media screen and (min-width: 1300px) {
+    
+    .btn-rond-menu {
+        display: none;
     }
-};
+ 
+    .nav {
+        display :flex;
+    }
 
-form {
-    margin-bottom: 3rem;
-}
+    .img-content {
+        height : 25%;
+    }
+ 
+ };
+ 
+ @media screen and (min-width: 750px) {
+     .btn-rond-menu {
+         width: 2rem;
+         height : 2rem;
+     }
+ }
