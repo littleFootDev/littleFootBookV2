@@ -2,14 +2,14 @@ extends layout
 
 block content 
 
-    main.main-account
+   .main-account
         nav.user-nav-content
             .user-nav-menu
                 h5.title-user Profile
-                ul.liste-user-menu 
-                    li.user-item-menu 
+                .liste-user-menu 
+                    span.user-item-menu 
                         a.user-link-menu Profil
-                    li.user-item-menu 
+                    span.user-item-menu 
                         a.user-link-menu Livre 
 
             - if(user.role === "Admin" || user.role === "Employer")
@@ -39,9 +39,9 @@ block content
                 
             .user-view-content
                 .user-views.form-content
-                    h2.title-secondary Gestion de votre compte
+                    h2.title-secondary Gestion de votre Mot de passe
                     form.form-signin.form-update-password
-                        input.form-control-signin(type="password", name="passWordCurrent", id="passwordCurrent", placeholder="Mot de passe" )
+                        input.form-control-signin(type="password", name="passWordCurrent", id="passwordCurrent", placeholder="Ancien mot de passe" )
                         input.form-control-signin(type="password", name="passWord", id="password", placeholder="Mot de passe" )
                         input.form-control-signin(type="password", name="passwordConfirm", id="passwordConfirm", placeholder="Confirmation mot de passe" )
                         br

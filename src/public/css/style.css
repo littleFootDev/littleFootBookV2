@@ -125,13 +125,17 @@ nav {
     align-items: center;
     flex-direction: column;
 }
+.home-title {
+    font-size: 3rem;
+    color: #040f0f;
+    margin : 2rem auto 2rem auto ;
+}
 footer {
     min-width: 100%;
     height: 9rem;
-    display: flex;
-    justify-content: center;
+    display : flex;
+    justify-content: space-between;
     align-items: center;
-    flex: flex-end;
     background: #6667ab;
     color: #dbdbdb;
 
@@ -160,15 +164,16 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 75%;
+    width: 100%;
     margin: 2rem 0 2rem 0;
-    background-color: #ecebe4;
+    background-color: #dbdbdb;
     border-radius: .2rem;
 }
 .actu-txt {
     font-size: 1.3rem;
     text-align: justify;
     padding: 0 1rem 0 1rem;
+    color: #040f0f;
 }
 .actu-title {
     font-size: 1.8rem;
@@ -178,18 +183,18 @@ footer {
 }
 .actu-footer {
     font-size: 1.5rem;
-    color: #153b50;
+    color: #040f0f;
     margin: 1rem 0 1rem 0;
 }
 
 .img-content {
-    width : 75%;
+    width : 100%;
     height : 50%;
 
 }
 img {
     width: 100%;
-    height:100%;
+    max-height: 80rem;
     margin-bottom: 2rem;
 }
 .form-content {
@@ -199,7 +204,7 @@ img {
     flex-direction: column;
     width: 50%;
     min-height: 60vh;
-    margin :15rem auto;
+    margin-top: 5rem;
 }
 .form-title {
     font-size: 2rem;
@@ -245,6 +250,7 @@ img {
 .title-catalogue {
     margin: 5rem auto;
     font-size:3rem;
+    color: #040f0f;
 }
 .card-content {
     width : 100%;
@@ -266,6 +272,9 @@ img {
     align-items: center;
     transition: transform .3s ease-out;
     box-shadow: 0 0 1rem rgba(0,0,0 0.5);
+}
+.card-catalogue {
+    height: 40rem;
 }
 .card:hover {
     transform: translateY(-5px);
@@ -294,14 +303,15 @@ img {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    color: #333;
+    color: #040f0f;
     text-decoration: none;
     font-size: 15px;
-    border: 1px solid #333;
+    border: 1px solid #040f0f;
     border-radius: 3px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    background : #85c7f2;
 }
 .btn-book::after {
     content: "";
@@ -325,7 +335,7 @@ img {
     align-items: center;
     flex-direction: column;
     margin-bottom: 2rem;
-    background: #ecebe4;
+    background: #dbdbdb;
     width: 100%;
     min-height: 50vh;
 }
@@ -340,20 +350,21 @@ img {
     text-align: center;
     cursor: pointer;
     font-family: 'Raleway', sans-serif;
-    color: #153b50;
-    background: #ecebe4;
+    color: #040f0f;
+    background: #dbdbdb;
+    width: 50%;
 }
 
 .btn{
-    border: .2rem solid #153b50;
+    border: .2rem solid #040f0f;
     border-radius: .5rem;
     width:10rem;
     cursor: pointer;
     font-family: 'Raleway', sans-serif;
 }
 .btn-inscription, .btn-login {
-    background: #429EA6;
-    color: #16f4D0;
+    background: #85c7f2;
+    color: #040f0f;
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -361,6 +372,7 @@ img {
 .title-form {
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    color: #040f0f;
 }
 
 .user-nav-content {
@@ -385,6 +397,12 @@ img {
 .title-user {
     font-size: 2rem;
 }
+.title-secondary {
+    color: #040f0f;
+}
+.user-view-content {
+    margin-left: 70rem;
+}
 .user-link-menu {
     margin-right: 2rem;
     color: #dbdbdb;
@@ -392,7 +410,6 @@ img {
     text-decoration: none;
     cursor: pointer;
 }
-
 @media screen and (min-width: 1300px) {
     
     .btn-rond-menu {

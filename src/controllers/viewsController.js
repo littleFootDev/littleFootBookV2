@@ -1,5 +1,6 @@
 import Book from '../models/book';
 import User from '../models/user';
+import Borrow from '../models/borrow';
 import catchAsync from '../utils/catchAsync';
 import AppError from '../utils/appError';
 

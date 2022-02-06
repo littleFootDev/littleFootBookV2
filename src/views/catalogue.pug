@@ -3,13 +3,13 @@ extends layout
 block content
 
     .main
-        h2.title-catalogue Notre catalogue de livre
+        h2.title-catalogue Notre catalogue de livres
 
         .card-content       
             each book in books 
-                .card
+                .card.card-catalogue
                     .cont-img-book
-                        img(src='./images/livre-harry-potter-1.jpeg' alt='image portfolio')
+                        img(src=`./images/${book.image}` alt='image portfolio')
                     h3= book.title
                     p= book.description
                     a.btn-book(href=`/book/${book._id}`) Voir

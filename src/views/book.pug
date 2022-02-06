@@ -6,7 +6,7 @@ block content
         h2.title-livre= book.title 
         .card-content 
             .card.card-book 
-                img.card-img-top(src="/images/bilbo-le-hobbit.jpeg" alt=`${book.title}`)
+                img.card-img-top(src=`../images/${book.image}` alt=`${book.title}`)
                 .card-body 
                     h4.card-title= book.title
                     p.card-text= book.description
